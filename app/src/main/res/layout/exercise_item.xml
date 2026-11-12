@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="52dp"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingVertical="8dp">
+
+        <!-- Prompt -->
+        <TextView
+            android:id="@+id/tvExercisePrompt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="46"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingEnd="8dp"
+            android:textSize="13sp"
+            tools:text="Choose the meaning of borrow" />
+
+        <!-- Type -->
+        <TextView
+            android:id="@+id/tvExerciseType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="22"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingEnd="8dp"
+            android:textSize="13sp"
+            tools:text="Multiple choice" />
+
+        <!-- Category -->
+        <TextView
+            android:id="@+id/tvExerciseCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="24"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingEnd="8dp"
+            android:textSize="13sp"
+            tools:text="Vocabulary" />
+
+        <!-- Delete -->
+        <ImageButton
+            android:id="@+id/btnDeleteExercise"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete exercise"
+            app:tint="#7C0D0D"
+            android:src="@drawable/ic_delete"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorOutlineVariant" />
+</LinearLayout>

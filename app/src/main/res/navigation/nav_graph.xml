@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/userListFragment"
+    android:id="@+id/nav_graph">
+
+<!--  user list  -->
+<!--  id: destination id  -->
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.example.englishapp.ui.UserListFragment"
+        tools:layout="@layout/user_list">
+<!--    live inside the screen the arrow start from, point to where it end    -->
+        <action
+            android:id="@+id/action_userList_to_userDetails"
+            app:destination="@id/userDetailsFragment"
+        />
+    </fragment>
+
+<!--  exercise session  -->
+    <fragment
+        android:id="@+id/exerciseSessionsFragment"
+        android:name="com.example.englishapp.ui.ExerciseSessionFragment"
+        tools:layout="@layout/exercise_sessions">
+<!--    exercise session to exercise list    -->
+        <action
+            android:id="@+id/action_sessions_to_exerciseList"
+            app:destination="@id/exerciseListFragment"/>
+        <!--    exercise session to form    -->
+        <action
+            android:id="@+id/action_sessions_to_sessionForm"
+            app:destination="@id/exerciseSessionFormFragment"/>
+    </fragment>
+
+<!--  exercise session form  -->
+    <fragment
+        android:id="@+id/exerciseSessionFormFragment"
+        android:name="com.example.englishapp.ui.ExerciseSessionFormFragment"
+        tools:layout="@layout/exercise_session_form">
+        <argument android:name="section" app:argType="string"/> <!-- now receives the section -->
+    </fragment>
+
+<!--  exercise list  -->
+    <fragment
+        android:id="@+id/exerciseListFragment"
+        android:name="com.example.englishapp.ui.ExerciseListFragment"
+        tools:layout="@layout/exercise_list">
+<!--    receiving destination declared what it expects    -->
+        <argument android:name="section" app:argType="string"/>
+        <argument android:name="sessionId" app:argType="integer"/>
+        <argument android:name="sessionTitle" app:argType="string"/>
+        <action
+            android:id="@+id/action_exerciseList_to_exerciseForm"
+            app:destination="@id/exerciseFormFragment"/>
+    </fragment>
+
+<!--  exercise form  -->
+    <fragment
+        android:id="@+id/exerciseFormFragment"
+        android:name="com.example.englishapp.ui.ExerciseFormFragment"
+        tools:layout="@layout/exercise_form">
+        <argument android:name="section" app:argType="string"/>
+        <argument android:name="sessionId" app:argType="integer"/>
+        <argument android:name="sessionTitle" app:argType="string"/>
+    </fragment>
+
+<!--  user details  -->
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.example.englishapp.ui.UserDetailsFragment"
+        tools:layout="@layout/user_details">
+        <argument android:name="userId" app:argType="integer"/>
+    </fragment>
+
+</navigation>
